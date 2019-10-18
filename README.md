@@ -1,4 +1,7 @@
 # TinRoll
+
+https://github.com/MorganW09/TinRoll/workflows/NET_Core_CI/badge.svg
+
 A stackoverflow clone built with C# + EF Core for the backend and React for the front end. Right now it's very feature bare. You can ask text only questions and can view them in a list. 
 
 
