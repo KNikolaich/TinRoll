@@ -10,8 +10,8 @@ using TinRoll.Data;
 namespace TinRoll.Data.Migrations
 {
     [DbContext(typeof(TinRollContext))]
-    [Migration("20191016222039_UpdatingTags")]
-    partial class UpdatingTags
+    [Migration("20191022025013_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

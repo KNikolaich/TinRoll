@@ -4,6 +4,8 @@ import '@babel/polyfill'
 import './single.css'
 import { RouteComponentProps } from 'react-router';
 
+import TextField from '@material-ui/core/TextField';
+
 const SingleQuestion = (props: RouteComponentProps<SingleQuestionoProps>) => {
     const [question, setQuestion] = useState<QuestionDto | null>();
     const [questionId, _] = useState<string>(props.match.params.id);
@@ -29,10 +31,11 @@ const SingleQuestion = (props: RouteComponentProps<SingleQuestionoProps>) => {
             }
             {
                 question != null &&
-                <div className='t-s-q-question'>
-                    <h2>{question.title}</h2>
-                    <p>{question.createdDate}</p>
-                    <p id='t-single-p'>{question.content}</p>
+                <div id="question-box">
+                    <div className='t-s-q-question'>
+                        <h2>{question.title}</h2>
+                        <p>{question.content}</p>
+                    </div>
                 </div>
             }
         </div>
