@@ -3,12 +3,11 @@ import '@babel/polyfill'
 
 import './single.css'
 import { RouteComponentProps } from 'react-router';
+import CreateAnswer from '../../answer/createAnswer';
 
-import TextField from '@material-ui/core/TextField';
-
-const SingleQuestion = (props: RouteComponentProps<SingleQuestionoProps>) => {
+const SingleQuestion = (props: RouteComponentProps<SingleQuestionProps>) => {
     const [question, setQuestion] = useState<QuestionDto | null>();
-    const [questionId, _] = useState<string>(props.match.params.id);
+    const [questionId, _] = useState<number>(parseInt(props.match.params.id));
 
 
     async function fetchQuestion() {
@@ -20,8 +19,7 @@ const SingleQuestion = (props: RouteComponentProps<SingleQuestionoProps>) => {
 
     useEffect(() => {
         fetchQuestion();
-        //TODO: need some cleanup function
-    });
+    }, []);
 
     return (
         <div className='t-single-question'>
@@ -36,6 +34,8 @@ const SingleQuestion = (props: RouteComponentProps<SingleQuestionoProps>) => {
                         <h2>{question.title}</h2>
                         <p>{question.content}</p>
                     </div>
+                    <CreateAnswer
+                        questionId={questionId} />
                 </div>
             }
         </div>

@@ -1,0 +1,1 @@
+type CreateAnswerProps = { questionId: number };

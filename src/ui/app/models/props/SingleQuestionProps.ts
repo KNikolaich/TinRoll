@@ -1,1 +1,1 @@
-type SingleQuestionoProps = { id: string };
+type SingleQuestionProps = { id: string };
